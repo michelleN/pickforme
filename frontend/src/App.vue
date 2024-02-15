@@ -49,7 +49,9 @@ export default {
 
   <h2>Options:</h2>
   <div v-for="(option, index) in options" :key="index">
-    <input type="text" placeholder="Add Option" v-model="options[index]">
+    <div v-if="index > 1">OR</div>
+    <input type="text" @keyup.enter="addOptionBox" placeholder="Add Option" v-model="options[index]">
+    <div v-if="index === 0">OR</div>
   </div>
   <button @click="addOptionBox">+</button>
   <div>

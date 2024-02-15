@@ -18,7 +18,7 @@ export default {
     },
     pickRandom() {
       const randomIndex = Math.floor(Math.random() * this.options.length)
-      this.result = this.options[randomIndex]
+      this.result = this.options[randomIndex] // TODO: only choose from the options that are non-empty
     },
     async fetchInfo(){
       try {

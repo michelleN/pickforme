@@ -56,7 +56,7 @@ export default {
   <button @click="addOptionBox">+</button>
   <div>
   <button @click="pickRandom"> Pick For Me</button>
-  <p>This result is: {{ result }}</p>
+  <p>Picked for you: {{ result }}</p>
   <p>{{ this.info }}</p>
   </div>
   

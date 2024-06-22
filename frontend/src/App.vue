@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      options: [''],
+      options: ['', ''],
       result: '',
       info: '',
     }
@@ -45,19 +45,20 @@ export default {
 </script>
 
 <template>
-  <h1> Pick For Me</h1>
-
-  <h2>Options:</h2>
-  <div v-for="(option, index) in options" :key="index">
-    <div v-if="index > 1">OR</div>
-    <input type="text" @keyup.enter="addOptionBox" placeholder="Add Option" v-model="options[index]">
-    <div v-if="index === 0">OR</div>
-  </div>
-  <button @click="addOptionBox">+</button>
-  <div>
-  <button @click="pickRandom"> Pick For Me</button>
-  <p>Picked for you: {{ result }}</p>
-  <p>{{ this.info }}</p>
+  <div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis"> Pick For Me</h1>
+    <div class="col-md-6 mx-auto col-lg-5">
+        <div v-for="(textBox, index) in options" :key="index" >
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" :id="'textBox' + index" v-model="options[index]">
+            <label :for="'textBox' + index">Option {{ index + 1 }}</label>
+          </div>
+        </div>
+      <button class="btn btn-secondary" @click="addOptionBox">+ Add Option</button>
+      <button class="btn btn-primary" @click="pickRandom"> Pick For Me</button>
+      <p>Picked for you: {{ result }}</p>
+      <p>{{ this.info }}</p>
+    </div>
   </div>
   
 </template>

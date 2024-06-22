@@ -47,6 +47,8 @@ export default {
 <template>
   <div class="px-4 py-5 my-5 text-center">
   <h1 class="display-5 fw-bold text-body-emphasis"> Pick For Me</h1>
+  <p class="lead mb-4">Can't decide? You don't have to!</p>
+    <div class="row">
     <div class="col-md-6 mx-auto col-lg-5">
         <div v-for="(textBox, index) in options" :key="index" >
           <div class="form-floating mb-3">
@@ -56,8 +58,15 @@ export default {
         </div>
       <button class="btn btn-secondary" @click="addOptionBox">+ Add Option</button>
       <button class="btn btn-primary" @click="pickRandom"> Pick For Me</button>
-      <p>Picked for you: {{ result }}</p>
-      <p>{{ this.info }}</p>
+    </div>
+      <div class="container">
+        <div class="row mt-3">
+          <h3>Picked for you: {{ result }}</h3>
+        </div>
+        <div class="row mt-3">
+          <h4>{{ this.info }}</h4>
+        </div>
+      </div>
     </div>
   </div>
   
